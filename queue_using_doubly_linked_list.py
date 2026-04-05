@@ -77,6 +77,15 @@ class QueueDLL:
         # check if the queue is empty:
         # if self.isEmpty():
         # raise IndexError("Queue is Empty!")
+        # else
+        # old_head = self.head
+        # removed_value = old_head.value
+        # self.head = self.head.next
+        # self.head.prev = None
+        # self.size-=1
+        # if self.head is None:
+        # self.tail = None
+        # return removed_value
         pass
 
     # peek
