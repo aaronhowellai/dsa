@@ -77,14 +77,21 @@ class QueueDLL:
         # check if the queue is empty:
         # if self.isEmpty():
         # raise IndexError("Queue is Empty!")
-        # else
-        # old_head = self.head
-        # removed_value = old_head.value
-        # self.head = self.head.next
-        # self.head.prev = None
+        # this is because you cannot dequeue from an empty list 
+        
+        # because the queue is FIFO, we remove from the head
+        # else: 
+        #
+        # (we need to assign the old head before we move on to keep track of its next and prev)
+        # old_head = self.head 
+        # removed_value = old_head.value (we need to store the remove the value)
+        # self.head = self.head.next (this is the assignment of the new head)
+        # self.head.prev = None(remove the prev connection)
         # self.size-=1
+        # 
         # if self.head is None:
         # self.tail = None
+        # 
         # return removed_value
         pass
 
