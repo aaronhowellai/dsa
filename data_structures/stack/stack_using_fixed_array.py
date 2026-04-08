@@ -4,7 +4,7 @@ Implementation of a stack using a fixed array with push/pop operations on intege
 
 This will use parallel stacks:
 - data_stack: where the current working data is stored.
-- history_stack: where the history that you can undo from stack(a) to stack(b) is stored as well as redo from stack(b) to stack(a).\
+- history_stack: where the history that you can undo from stack(a) to stack(b) is stored as well as redo from stack(b) to stack(a).
 
 """
 
@@ -13,16 +13,25 @@ class fixedArraryStack():
     def __init__(self,stack1,stack2,size):
         pass
 
-    def stackPop():
+    def Pop():
         pass
 
-    def stackPush():
+    def Push(self,value):
+        self.value = value
         pass
 
     def undo():
+        # if the data stack is empty, you cannot undo any further
+
+        # if self.stack1.size is None:
+            # raise IndexError("There is no data in the data_stack to undo. Please add data using <self>.Push()!")
         pass
 
     def redo():
+        # you cannot undo if the history stack size is None
+        
+        # if self.stack2.size is None:
+            # raise IndexError("There is no data in the history_stack to redo. Please use undo first!")
         pass
 
     def returnStack():
