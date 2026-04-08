@@ -69,7 +69,53 @@ history_stack = []
         - data_stack (now): [A, X] 
         - the command undo would now remove X, and redo is an invalid move because its history in the sequence was overwritten before redoing it before the next push
     
+// Layer 1: One fixed array stack 
+- This stack should manage:
+    - underlying array
+    - capacity
+    - top index
 
+    - Methods:
+        - isEmpty()
+        - isFull()
+        - push(value)
+        - pop()
+        - peek()
+        - returnStack()
+
+// Layer 2: undo/redo system
+- Class to contain:
+    - data_stack
+    - history_stack
+
+    - Methods:
+        - push(value)
+        - undo()
+        - redo()
+
+// Empty protocol
+- When empty, stack.top.index == -1
+    - This is because top represents an array index and when capacity is fully open, the first position is 0
+    - Upon the push() operation, stack.top.index+=1
+
+// Full stack protocol
+- The condition to mark the stack as full is stack.top == stack.size - 1
+    - This is because with zero-indexing, the array will start at n-1, which is zero.
+
+// Summary so far
+
+Push:
+
+check if full
+move top up
+place value
+
+Pop:
+
+check if empty
+read value at top
+move top down
+        
 """
 
 class fixedArraryStack():

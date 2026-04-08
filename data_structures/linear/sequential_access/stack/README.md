@@ -36,15 +36,14 @@ Yes.
 
 * `value`
 * `next`
-* `prev
-  `
+* `prev `
   * While this also works, it is usually unnecessary for a standard stack because stacks do not need backward traversal.
 
 ## Interview Answer
 
 Yes, a stack can be implemented with both a singly or doubly linked list, but a singly linked list is usually preferred because stack operations only need one end of the strusture, so the extra `prev` pointer adds overhead without improving the core O(1) push and pop operations.
 
-### If the stack uses a singly linked list, would you want the top to be assigned as the `head` or `tail`? 
+### If the stack uses a singly linked list, would you want the top to be assigned as the `head` or `tail`?
 
 *(Design Question)*
 
