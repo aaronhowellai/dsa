@@ -1,5 +1,0 @@
----
-triple:          'arm64-apple-darwin'
-binary-path:     '/Users/aaronhowell/Documents/GitHub/dsa/algorithms/sorting_algorithms/bubble_sort/simple_bubble_sort'
-relocations:     []
-...

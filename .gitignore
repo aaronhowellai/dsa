@@ -1,2 +1,23 @@
 # macOS
 .DS_Store
+
+# Compiled executables (no extension on Unix/macOS)
+simple_bubble_sort
+simple_bubble_sort_cpp
+simple_bubble_sort_alternative
+
+# Object files
+*.o
+*.a
+*.so
+
+# Debug symbols
+*.dSYM/
+
+# Executable outputs
+*.out
+*.exe
+
+# config
+.vscode
+.vscode/tasks.json
