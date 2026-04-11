@@ -24,7 +24,7 @@ def bubble_sort(arr):
     return arr
 
 # implement the script
-nArray = [456, 41,2,67,43,4,25,8]
+nArray = [456,41,2,67,43,4,25,8]
 
 # print the unsorted array
 print(f"\nMy unsorted array: {nArray}!\n")
