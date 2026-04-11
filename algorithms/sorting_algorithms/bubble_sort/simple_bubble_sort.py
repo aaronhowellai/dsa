@@ -13,10 +13,8 @@ def bubble_sort(arr):
         # go through all array elements, minus the ones already sorted
         for j in range(0, n-i-1):
             
-            # swap the next number with the current number if it is greater than it, by a value of 1 (int)
-            if arr[j] > arr[j+1]:
-
-                arr[j], arr[j+1] = arr[j+1], arr[j]
+            # Swap Conditional: swap the next number with the current number if it is greater than it, by a value of 1 (int)
+            if arr[j] > arr[j+1]: arr[j], arr[j+1] = arr[j+1], arr[j]
                 
     return arr
 
