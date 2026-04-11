@@ -1,5 +1,5 @@
 """
-This script exists to demonstrate a simple implementation of a Bubble Sorting algorithm.
+This script exists to demonstrate a simple O(n²) implementation of a Bubble Sorting algorithm.
 """
 
 def bubble_sort(arr):
