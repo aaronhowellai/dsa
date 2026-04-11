@@ -9,8 +9,8 @@ import java.util.Arrays;
 class SimpleBubbleSort {
 
     // perform the bubble sort 
-    static void bubbleSort(int array[]) {
-        int n = array.length;
+    static void bubbleSort(int arr[]) {
+        int n = arr.length;
 
         // loop to access each array element
         for (int i = 0; i < n - 1; i++)
@@ -19,12 +19,14 @@ class SimpleBubbleSort {
             for (int j = 0; j < n - i - 1; j++)
 
                 // compare two adjacent adjacent elements
-                if (array[j] > array[j + 1]) {
+                if (arr[j] > arr[j + 1]) {
 
                     // swap if elements meet the target condition
-                    int temp = array[j];
-                    array[j] = array[j + 1];
-                    array[j + 1] = temp;
+
+                    // basic reassignment design 
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
                 }
     }
 
@@ -34,7 +36,7 @@ class SimpleBubbleSort {
 
         // print unsorted array first
         System.out.println(System.lineSeparator());
-        System.out.println("My unsorted array:");
+        System.out.println("Unsorted array:");
         System.out.println(Arrays.toString(data));
         System.out.println(System.lineSeparator());
         
