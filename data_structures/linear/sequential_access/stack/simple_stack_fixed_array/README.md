@@ -98,6 +98,13 @@ history_stack = []
     - peek()
     - returnStack()
 
+    ### Peek -> Mental model
+
+
+    * `self.stack` → the container
+    * `self.top` → the position
+    * `self.stack[self.top]` → the value at that position
+
 // Layer 2: undo/redo system
 
 - Class to contain:

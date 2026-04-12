@@ -22,22 +22,24 @@ class FixedArrayStack:
 
     # stack state check
     def isEmpty(self):
-        
+
         # return True if the stack is empty (top has no valid index)
         return self.top == -1
 
     # stack state check
     def isFull(self):
-        # the stack is full if the capacity has reached its terminus
-        # if self.capacity is None:
-            # return True 
-        pass
+
+        # return True if the stack is full (top index matches the maximum capacity - 1 due to zero indexing)
+        return self.top == self.capacity - 1
 
     # read-only accessor
     def peek(self):
-        # view the value at the top of the stack
-        # return self.top.value
-        pass
+        # if the stack is empty (there is no value to peek at), raise an error 
+        if self.isEmpty():
+            raise IndexError("Stack is empty. Cannot peek.")
+
+        # read the value at the top of the stack (use the index of the top element to access the value of the array, with respect to how python accesses list elements)
+        return self.stack[self.top]
 
     # append mutation method 
     def push(self,value):
