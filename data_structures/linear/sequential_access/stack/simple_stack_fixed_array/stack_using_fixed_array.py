@@ -23,7 +23,7 @@ class FixedArrayStack:
     # stack state check
     def isEmpty(self):
         
-        # return True if the stack is empty (top has nop valid index)
+        # return True if the stack is empty (top has no valid index)
         return self.top == -1
 
     # stack state check
