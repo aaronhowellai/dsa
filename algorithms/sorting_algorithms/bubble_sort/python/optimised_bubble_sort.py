@@ -12,7 +12,6 @@ def bubbleSort(arr):
         swapped = False
 
         # loop to compare array elements
-
         for j in range(0, n-i-1):
 
             # compare two adjacent elements
