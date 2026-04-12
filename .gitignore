@@ -18,5 +18,4 @@ simple_bubble_sort_alternative
 *.out
 *.exe
 
-# config
-.vscode
+
