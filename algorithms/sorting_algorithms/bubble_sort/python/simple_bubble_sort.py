@@ -1,8 +1,8 @@
 """
-This script exists to demonstrate a simple O(n²) implementation of a Bubble Sorting algorithm.
+This script exists to demonstrate a simple O(n²) implementation of the Bubble Sorting algorithm.
 """
 
-def bubble_sort(arr):
+def bubbleSort(arr):
 
     # set a simple reusable variable to represent the full length of the array
     n = len(arr)
@@ -24,12 +24,12 @@ def bubble_sort(arr):
     return arr
 
 # implement the script
-nArray = [456,41,2,67,43,4,25,8]
+data = [456,41,2,67,43,4,25,8]
 
 # print the unsorted array
-print(f"\nMy unsorted array: {nArray}!\n")
+print(f"\nUnsorted array: {data}\n")
 
 # print the sorted array, that implemented the algorithm
-print(f"Sorted array: {bubble_sort(nArray)}!\n")
+print(f"Sorted array: {bubbleSort(data)}\n")
 
         
