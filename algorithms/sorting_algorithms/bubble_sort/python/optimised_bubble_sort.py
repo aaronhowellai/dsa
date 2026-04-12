@@ -1,5 +1,13 @@
 """
 This script exists to demonstrate an optimised implementation of the Bubble Sorting algorithm.
+
+Improvements:
+
+- Tracking swap statuses as booleans allow you to tell the program to stop executing the loop when no swaps are made.
+
+- n passes happen in a normal bubble sorting algorithm if you don't tell the program to stop working after no swaps are made at the j loop level.
+
+- Adding 'break' under a condition that no swaps are made prevents the potentially wasted n executions of the rest of the j loop if the array gets sorted early.
 """
 
 def bubbleSort(arr):
