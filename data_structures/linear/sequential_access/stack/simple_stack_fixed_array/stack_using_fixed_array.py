@@ -90,16 +90,24 @@ class FixedArrayStack:
 # can use two instances of the previous stack to implement undo/redo
 class UndoRedoManager:
 
-    def __init__(self,data_stack, history_stack):
+    # constructor method
+    def __init__(self):
         pass
 
+    # method to push from one stack to another
+    def push(value):
+        pass
+
+    # undo operation method: from data_stack to history_stack
     def undo():
         pass
 
+    # redo operation method: from history_stack to data_stack
     def redo():
         pass
 
-    def push(value):
+    # return an array of the history of the last n actions taken 
+    def returnHistory(self):
         pass
 
 
