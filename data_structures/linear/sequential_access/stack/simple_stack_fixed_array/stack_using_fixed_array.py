@@ -44,19 +44,14 @@ class FixedArrayStack:
     # append mutation method 
     def push(self,value):
         # check if the stack is full
-        # if the stack is full (use a method), then raise an exception
-        # if isFull():
-            # raise IndexError("The stack is already full. Please pop off more elements to push!")
+        if self.isFull():
+            raise IndexError("Stack is full, Cannot push.")
         
-        # read value at top (use method)
-        # call peek()
+        # increment index to prepare for new value assignment at new top
+        self.top += 1
 
-        # move top up
-        # self.top += 1
-
-        # place value at top
-        # self.top.value = value
-        pass
+        # assign value at new top index
+        self.stack[self.top] = value
 
     # # removal mutation method
     def pop(self):
