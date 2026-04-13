@@ -56,26 +56,36 @@ class FixedArrayStack:
     # # removal mutation method
     def pop(self):
         # check if the stack is empty 
-        # is the stack is empty (use a method), then raise an exception
-        # if isEmpty():
-            # raise IndexError("The stack is empty. Please push elements first to execute pop!")
+        if self.isEmpty():
+            raise IndexError("Stack is empty. Cannot pop.")
+        
+        # read the value at the top
+        popped = self.stack[self.top]
 
-        # read value at top (use method)
-        # call peek()
+        # clear the top value to prevent data overwrites (cleaner design)
+        self.stack[self.top] = None
 
-        # move top down
-        # self.top -= 1
-        pass
+        # decrement index by 1 after removing the current value
+        self.top -= 1
+
+        # return the popped value
+        return popped
 
     # output helper
     def returnStack(self):
-        # result = []
-        # for every value in the array that is present, append it to the result python list
-        # for value in 'the values in the stack':
-            # result.append(value)
+        # init an empty array to append to 
+        result = []
 
-        # return result
-        pass
+        # inclusive top for range
+        inclusive_top = self.top + 1
+
+        # create a loop to append the range of indices
+        for i in range(0, inclusive_top):
+            # return the stack value at the current index
+            result.append(self.stack[i])
+
+        # return the resulting array
+        return result
 
 # can use two instances of the previous stack to implement undo/redo
 class UndoRedoManager:
