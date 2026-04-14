@@ -97,7 +97,14 @@ class UndoRedoManager:
 
     # method to push from one stack to another
     def push(self,value):
-        pass
+
+        # add value to the stack
+        self.data_stack.push(value)
+
+        # clear the history of the stack
+        self.history_stack.top = -1 # clear the logical state 
+        self.history_stack.stack = [None] * self.history_stack.capacity # clear the physical state
+        
 
     # undo operation method: from data_stack to history_stack
     def undo(self):
