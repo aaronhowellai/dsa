@@ -53,7 +53,7 @@ class FixedArrayStack:
         # assign value at new top index
         self.stack[self.top] = value
 
-    # # removal mutation method
+    # removal mutation method
     def pop(self):
         # check if the stack is empty 
         if self.isEmpty():
@@ -108,15 +108,34 @@ class UndoRedoManager:
 
     # undo operation method: from data_stack to history_stack
     def undo(self):
-        pass
+
+        # raise error if attempting undo from an empty state
+        if self.data_stack.isEmpty():
+            raise IndexError("Data stack is empty. Cannot undo.")
+        
+        # remove the top value from the data_stack 
+        popped = self.data_stack.pop()
+
+        # push that same value to the history_stack
+        self.history_stack.push(popped)
 
     # redo operation method: from history_stack to data_stack
     def redo(self):
-        pass
+        
+        # raise error if attempting to redo from an empty state
+        if self.history_stack.isEmpty():
+            raise IndexError("History stack is empty. Cannot redo.")
+        
+        # remove from the top of the history_stack 
+        popped = self.history_stack.pop()
+
+        # push to the top of the data_stack
+        self.data_stack.push(popped)
 
     # return an array of the history of the last n actions taken 
     def returnHistory(self):
-        pass
+        return self.history_stack.returnStack()
+        
 
 
 

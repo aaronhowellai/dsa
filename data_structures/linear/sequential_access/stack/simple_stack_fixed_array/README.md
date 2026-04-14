@@ -1,13 +1,15 @@
-"""
+# Undo/Redo Program 💻
 
-Implementation of one stack using a fixed array with push/pop operations and another stack enabling undo/redo actions, both in O(1) time on integer, floating point and string data types.
+## Dual-stack data structures implemented using fixed arrays and OOP
 
-// This implementation will use parallel stacks:
+OOP Implementation of one stack using a fixed array with push/pop operations and another stack enabling undo/redo actions, both in O(1) time on integer, floating point and string data types.
 
-- stack_one: data_stack → current state
+### Stack Details:
+
+- **stack_one:** `data_stack` → current state
 
   - where the current working data is stored.
-- stack_two: history_stack → mod states
+- **stack_two:** `history_stack` → mod states
 
   - where the history that you can undo from stack_one to stack_two is stored as well as redo from stack_two to stack_one.
 
