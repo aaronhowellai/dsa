@@ -4,7 +4,7 @@
 
 OOP Implementation of one stack using a fixed array with push/pop operations and another stack enabling undo/redo actions, both in O(1) time on integer, floating point and string data types.
 
-### Stack Details:
+### Stack Details
 
 - **stack_one:** `data_stack` → current state
 
@@ -13,7 +13,7 @@ OOP Implementation of one stack using a fixed array with push/pop operations and
 
   - where the history that you can undo from stack_one to stack_two is stored as well as redo from stack_two to stack_one.
 
-// How the system should behave
+### How the system should behave
 
 Start:
 
@@ -73,7 +73,7 @@ data_stack = [X, Y, Z]
 
 history_stack = []
 
-// Important design rule
+#### Important design rule
 
 - Whenever a new push(x) is executed, the history_stack must be cleared
 
@@ -84,30 +84,59 @@ history_stack = []
     - data_stack (now): [A, X]
     - the command undo would now remove X, and redo is an invalid move because its history in the sequence was overwritten before redoing it before the next push
 
-// Layer 1: One fixed array stack
-
-- This stack should manage:
-
-  - underlying array
-  - capacity
-  - top index
-  - Methods:
-
-    - isEmpty()
-    - isFull()
-    - push(value)
-    - pop()
-    - peek()
-    - returnStack()
-
-    ### Peek -> Mental model
+### Layer 1: One fixed array stack
 
 
-    * `self.stack` → the container
-    * `self.top` → the position
-    * `self.stack[self.top]` → the value at that position
+This stack should manage:
 
-// Layer 2: undo/redo system
+- underlying array
+- capacity
+- top index
+- Methods:
+
+  - isEmpty()
+  - isFull()
+  - push(value)
+  - pop()
+  - peek()
+  - returnStack()
+
+  ### Peek -> Mental model
+
+
+  * `self.stack` → the container
+  * `self.top` → the position
+  * `self.stack[self.top]` → the value of the stack at that position
+
+#### 🧊 `class` FixedArrayStack
+
+┣🧊 `__init__(self, capacity)`
+┣ `self.stack`
+┣ `self.capacity`
+┗ `self.top`
+
+┣🧊 `isEmpty(self) `
+┗ `self.top`
+
+┣🧊 `isFull(self) `
+┣ `self.top`
+┗ `self.capacity`
+
+┣🧊 `peek(self)`
+┣ `self.Empty()`
+┣ `self.stack`
+┗ `self.top`
+
+┣🧊 `push(self)`
+┗ `value`
+
+┣🧊 `pop(self)`
+┗ `value`
+
+┣🧊 `returnStack(self)`
+┗ `value`
+
+### Layer 2: undo/redo system
 
 - Class to contain:
 
