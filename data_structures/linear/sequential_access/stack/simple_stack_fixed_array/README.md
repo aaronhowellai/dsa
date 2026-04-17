@@ -96,34 +96,51 @@ _We use two stacks because undo and redo require moving data between two states:
 
 #### 🧊 `class` FixedArrayStack, Attribute Access Design
 
+
 ┣🧊 `__init__(self, capacity)`
+
 ┣ `self.stack`
+
 ┣ `self.capacity`
+
 ┗ `self.top`
 
 ┣🧊 `isEmpty(self) `
+
 ┗ `self.top`
 
 ┣🧊 `isFull(self) `
+
 ┣ `self.top`
+
 ┗ `self.capacity`
 
 ┣🧊 `peek(self)`
+
 ┣ `self.isEmpty()`
+
 ┗ `self.stack[self.top]`
 
 ┣🧊 `push(self,value)`
+
 ┣ `self.isFull()`
+
 ┣ `self.stack[self.top]`
+
 ┗ `self.top`
 
 ┣🧊 `pop(self)`
+
 ┣ `self.isEmpty()`
+
 ┣ `self.top`
+
 ┗ `self.stack`
 
 ┣🧊 `returnStack(self)`
+
 ┣ `self.top`
+
 ┗ `self.stack`
 
 ### `Layer 2`: undo/redo program
@@ -142,29 +159,41 @@ _We use two stacks because undo and redo require moving data between two states:
 #### 🧊 `class` UndoRedoManager, Attribute Access Design
 
 ┣🧊 `__init__(self, capacity)`
+
 ┣ `self.history_stack`
+
 ┗ `self.data_stack`
 
 ┣🧊 `push(self,value)`
+
 ┣ `self.data_stack.push(value)`
+
 ┗ `self.history_stack`
+
       ┗ `self.history_stack.top`
       ┗ `self.history_stack.stack`
       ┗ `self.history_stack.capacity`
 
 ┣🧊 `undo(self)`
+
 ┣ `self.data_stack`
+
       ┗ `self.data_stack.isEmpty()`
       ┗ `self.data_stack.pop()`
+
 ┗ `self.history_stack.push(popped)`
 
 ┣🧊 `redo(self)`
+
 ┣ `self.history_stack`
+
       ┗ `self.history_stack.isEmpty()`
       ┗ `self.history_stack.pop()`
+      
 ┗ `self.data_stack.push(popped)`
 
 ┣🧊 `returnHistory(self)`
+
 ┗ `self.history_stack.returnStack()`
 
 ## Empty protocol
