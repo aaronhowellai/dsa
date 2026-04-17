@@ -135,7 +135,3 @@ class UndoRedoManager:
     # return an array of the history of the last n actions taken 
     def returnHistory(self):
         return self.history_stack.returnStack()
-        
-
-
-
