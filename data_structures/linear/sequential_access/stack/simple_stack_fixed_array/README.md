@@ -4,6 +4,12 @@
 
 OOP Implementation of one stack using a fixed array with push/pop operations and another stack enabling undo/redo actions, both in O(1) time on integer, floating point and string data types.
 
+### Interview Question
+
+> Why do we need two stacks for undo/redo instead of one?
+
+_We use two stacks because undo and redo require moving data between two states: current data and previously undone actions. When we undo, we pop from the data stack and push to the history stack; when we redo, we reverse that. Without a second stack, we would lose the ability to restore previously undone actions._
+
 ### Stack Details
 
 - **stack_one:** `data_stack` → current state
